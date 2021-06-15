@@ -13,13 +13,14 @@ vector<string> split(const string& s, const char& separator) {
         res.push_back(s.substr(beginPos, desPos-beginPos));
         beginPos = desPos + 1;
     }
+    res.push_back(s.substr(beginPos, desPos-beginPos));
     return res;
 }
 
 int main() {
     string test("sfsg.sfsf.hgt.rhrha.sdeyet.eeyrtj.dghd");
-    test = "sfsg";
-    test = "";
+    //test = "sfsg";
+    //test = "";
     auto splitRes = split(test, '.');
     for (const string& s: splitRes) {
         cout << s << " ";
