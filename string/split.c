@@ -7,11 +7,11 @@ using namespace std;
 vector<string> split(const string& s, const char& separator) {
     vector<string> res;
     int beginPos = 0;
-    int desPos = s.npos;
-    while ((desPos = s.find(separator, beginPos)) 
-            && desPos != s.npos) {
+    int desPos = s.find(separator, beginPos);
+    while (desPos != s.npos) {
         res.push_back(s.substr(beginPos, desPos-beginPos));
         beginPos = desPos + 1;
+        desPos = s.find(separator, beginPos);
     }
     res.push_back(s.substr(beginPos, desPos-beginPos));
     return res;
